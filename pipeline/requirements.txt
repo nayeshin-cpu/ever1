@@ -1,0 +1,9 @@
+rembg
+Pillow
+numpy
+boto3
+requests
+supabase
+torch
+torchvision
+ffmpeg-python
