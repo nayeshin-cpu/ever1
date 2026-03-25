@@ -78,7 +78,14 @@ export async function GET(
     }
 
     const status = genReq.status as Status;
-    const response: any = {
+    const response: {
+      status: Status;
+      progress: number;
+      stepLabel: string;
+      videoUrl?: string;
+      thumbnailUrl?: string;
+      errorMessage?: string;
+    } = {
       status,
       progress: genReq.progress ?? 0,
       stepLabel: STATUS_LABELS[status],

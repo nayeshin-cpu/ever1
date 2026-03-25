@@ -24,7 +24,7 @@ export async function GET() {
   return NextResponse.json(mockPets);
 }
 
-export async function POST(request: Request) {
+export async function POST() {
   /* 임시: 로그인 없이 UI 테스트 가능하도록 생성 성공으로 처리
   const supabase = createServerSupabaseClient();
   const { data: { user } } = await supabase.auth.getUser();

@@ -113,7 +113,9 @@ export default function CompletePage() {
 
   const handleKakaoShare = () => {
     // 카카오 공유 API (카카오 SDK가 로드되어 있다고 가정)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     if (typeof window !== "undefined" && (window as any).Kakao) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).Kakao.Share.sendDefault({
         objectType: "feed",
         content: {

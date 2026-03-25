@@ -10,10 +10,6 @@ interface BillingKeyResponse {
   billingKey: string;
 }
 
-interface PaymentResponse {
-  orderId: string;
-}
-
 const PLAN_CONFIG: Record<string, { limit: number; pricePerMonth: number }> = {
   basic: { limit: 4, pricePerMonth: 9900 },
   premium: { limit: 9999, pricePerMonth: 19900 },

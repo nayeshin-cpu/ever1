@@ -100,8 +100,9 @@ export default function ProgressPage() {
   useEffect(() => {
     if (!requestId) return;
 
-    let pollInterval: NodeJS.Timeout;
     let isMounted = true;
+    // eslint-disable-next-line prefer-const
+    let pollInterval: NodeJS.Timeout;
 
     const fetchStatus = async () => {
       try {

@@ -16,9 +16,8 @@ interface TossWebhookPayload {
  * TossPayments 웹훅 인증
  * 실제 구현에서는 TossPayments의 서명 검증을 수행해야 함
  */
-function verifyTossSignature(_payload: string, _signature: string): boolean {
+function verifyTossSignature(): boolean {
   // TODO: 실제 TossPayments 서명 검증 로직
-  // 현재는 간단한 구현
   return true;
 }
 
@@ -31,7 +30,7 @@ export async function POST(request: NextRequest) {
     const signature = request.headers.get("toss-signature") || "";
 
     // 서명 검증
-    if (!verifyTossSignature(JSON.stringify(payload), signature)) {
+    if (!verifyTossSignature()) {
       return NextResponse.json(
         { error: "서명 검증 실패" },
         { status: 401 }
