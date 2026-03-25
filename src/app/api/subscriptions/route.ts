@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 interface SubscriptionData {
@@ -15,7 +15,7 @@ interface SubscriptionData {
   updated_at: string;
 }
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const supabase = createServerSupabaseClient();
 
@@ -63,7 +63,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export async function DELETE(request: NextRequest) {
+export async function DELETE() {
   try {
     const supabase = createServerSupabaseClient();
 

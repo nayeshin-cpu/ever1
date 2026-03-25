@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getSignedDownloadUrl } from "@/lib/r2";
 
@@ -11,7 +11,7 @@ interface VideoItem {
   videoUrl: string;
 }
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const supabase = createServerSupabaseClient();
 
@@ -86,7 +86,7 @@ export async function GET(request: NextRequest) {
         videos.push({
           id: req.id,
           petId: req.pet_id,
-          petName: (req.pet_profiles as any)?.pet_name || "반려동물",
+          petName: (req.pet_profiles as unknown as { pet_name: string })?.pet_name || "반려동물",
           createdAt: req.created_at,
           thumbnailUrl,
           videoUrl,

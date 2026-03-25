@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import crypto from "crypto";
 
 interface TossWebhookPayload {
   eventType: string;
@@ -17,7 +16,7 @@ interface TossWebhookPayload {
  * TossPayments 웹훅 인증
  * 실제 구현에서는 TossPayments의 서명 검증을 수행해야 함
  */
-function verifyTossSignature(payload: string, signature: string): boolean {
+function verifyTossSignature(_payload: string, _signature: string): boolean {
   // TODO: 실제 TossPayments 서명 검증 로직
   // 현재는 간단한 구현
   return true;

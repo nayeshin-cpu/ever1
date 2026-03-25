@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import Link from "next/link";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 
@@ -19,7 +19,6 @@ interface MediaAsset {
 }
 
 export default function CompletePage() {
-  const router = useRouter();
   const params = useParams();
   const requestId = params.requestId as string;
   const supabase = createBrowserSupabaseClient();

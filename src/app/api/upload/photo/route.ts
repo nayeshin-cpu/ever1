@@ -49,7 +49,6 @@ export async function POST(request: NextRequest) {
     // 인증 확인
     const {
       data: { user },
-      error: authError,
     } = await supabase.auth.getUser();
 
     // 임시: 로그인 없이 UI 테스트 가능하도록 우회
