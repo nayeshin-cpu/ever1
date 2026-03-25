@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 
 interface Subscription {
   id: string;
@@ -109,8 +108,6 @@ function CancelModal({
 }
 
 export default function SubscriptionPage() {
-  const supabase = createBrowserSupabaseClient();
-
   const [subscription, setSubscription] = useState<Subscription | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [showCancelModal, setShowCancelModal] = useState(false);

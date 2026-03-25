@@ -139,7 +139,6 @@ export default function VideosPage() {
 
   const maxFreeVideos = 3;
   const isFreeUser = userPlan === "free";
-  const displayLimit = isFreeUser ? maxFreeVideos : filteredVideos.length;
 
   return (
     <div className="min-h-screen bg-white">

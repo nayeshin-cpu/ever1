@@ -41,7 +41,6 @@ export default function HomePage() {
   const router = useRouter();
   const supabase = createBrowserSupabaseClient();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -52,8 +51,6 @@ export default function HomePage() {
         setIsLoggedIn(!!user);
       } catch (err) {
         console.error("Auth check failed:", err);
-      } finally {
-        setIsLoading(false);
       }
     };
 
