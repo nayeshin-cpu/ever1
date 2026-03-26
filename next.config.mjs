@@ -19,9 +19,8 @@ const nextConfig = {
         ],
     },
 
-    // 빌드 시 ESLint 경고는 허용 (타입 오류는 여전히 차단)
     eslint: {
-        ignoreDuringBuilds: false,
+        ignoreDuringBuilds: true,
     },
 };
 

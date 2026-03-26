@@ -257,8 +257,11 @@ export default function SubscriptionPage() {
                   ))}
                 </ul>
                 {plan.type !== subscription.plan_type && (
-                  <button className="w-full px-3 py-2 rounded-lg bg-amber-500 text-white font-medium hover:bg-amber-600 text-sm">
-                    업그레이드
+                  <button
+                    disabled
+                    className="w-full px-3 py-2 rounded-lg bg-gray-200 text-gray-400 font-medium text-sm cursor-not-allowed"
+                  >
+                    준비 중
                   </button>
                 )}
               </div>
